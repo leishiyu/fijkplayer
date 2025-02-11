@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.library'
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace "com.befovy.fijkplayer"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+
+dependencies {
+    implementation 'com.befovy.fijkplayer:fijkplayer-full:0.7.16'
+    implementation 'androidx.annotation:annotation:1.2.0'
+}
